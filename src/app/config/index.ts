@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 import path from 'path';
 
 // Correct the path construction
-dotenv.config({ path: path.join(process.cwd(), '../.env') });
+dotenv.config({ path: path.join(process.cwd(), '.env') });
 
 export default {
   port: process.env.PORT,
