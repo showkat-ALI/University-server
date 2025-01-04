@@ -47,7 +47,7 @@ const guardianSchema = new Schema<Guardian>({
   },
 });
 
-const localGuardianSchema = new Schema<LocalGuardian>({
+const localGuradianSchema = new Schema<LocalGuardian>({
   name: {
     type: String,
     required: true,
@@ -74,11 +74,11 @@ const studentSchema = new Schema<Student>({
   email: { type: String, required: true },
   contactNo: { type: String, required: true },
   emergencyContactNo: { type: String, required: true },
-  bloodGroup: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'],
+  bloogGroup: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'],
   presentAddress: { type: String, required: true },
   permanentAddress: { type: String, required: true },
   guardian: guardianSchema,
-  localGuardian: localGuardianSchema,
+  localGuardian: localGuradianSchema,
   profileImg: { type: String },
   isActive: ['active', 'blocked'],
 });

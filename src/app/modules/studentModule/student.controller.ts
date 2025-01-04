@@ -26,8 +26,8 @@ const getAllStudent = async (req: Request, res: Response) => {
   }
 };
 const getSingleStudent = async (req: Request, res: Response) => {
+  const { studentID } = req.params;
   try {
-    const { id: studentID } = req.body;
     const result = await StudentServices.getSingleStudentFromDB(studentID);
     res.status(200).json({
       success: true,
@@ -35,7 +35,10 @@ const getSingleStudent = async (req: Request, res: Response) => {
       data: result,
     });
   } catch (err) {
-    console.log(err);
+    res.status(500).json({
+      sucess: false,
+      messsage: err,
+    });
   }
 };
 
